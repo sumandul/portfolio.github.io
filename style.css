@@ -15,6 +15,32 @@ html{
     
 }
 
+.btn-top{
+    width: 4rem;
+    height: 4rem;
+    background-color: crimson;
+    position: fixed;
+       
+        right: 2rem;
+      line-height: 2.1rem;
+      border-radius: 0.5rem;
+      text-align: center;
+        z-index: 99;
+        font-size: 3.5rem;
+        color: #fff;
+        opacity: 0;
+        cursor: pointer;
+        pointer-events: none;
+        transition: all 0.5s ease;
+}
+.btn-top.show{
+    opacity: 1;
+    bottom: 10rem;
+    pointer-events: auto;
+   
+}
+
+
 .navbar{
     position: fixed;
     top: 0;
@@ -47,6 +73,10 @@ html{
   
 }
 
+.navbar.sticky ul li a:hover{
+    color: #1f1d1d;
+}
+
 .navbar .logo a span{
     color: crimson;
     transition: all 0.4s ease;
@@ -66,7 +96,7 @@ html{
 }
 .navbar .menu li a:hover{
     color: crimson;
-    text-shadow: 3px 4px 2px rgba(0,0,0,0.6);
+    /* text-shadow: 3px 4px 2px rgba(0,0,0,0.6); */
 }
 .home{
 background-image: url(img/banner.jpg);
@@ -622,6 +652,10 @@ transition: all 0.5s ease;
       padding: 0 3rem;
       text-transform: capitalize;
       border-radius: 0.5rem;
+      border: 0;
+       background-color: #fff;
+       border: 2px solid #ccc;
+       box-shadow: 0px 2px 0px 0px rgba(0,0,0,0.6);
    }  
    .contact-right .field-area textarea{
        text-transform: capitalize;
@@ -630,6 +664,8 @@ transition: all 0.5s ease;
        padding: 1rem 1rem;
        width: 30rem;
        height: 9rem;
+       border: 2px solid #ccc;
+       box-shadow: 0px 2px 0px 0px rgba(0,0,0,0.6);
    } 
    .contact-right .send{
        background-color:crimson;
@@ -819,7 +855,10 @@ height: 30rem
     }
     .menu-bar{
         display: block;
-        z-index:999;
+        z-index:555;
+    }
+    .menu-bar i.active::before{
+        content: "\f00d";
     }
     .navbar .menu{
         position: fixed;
@@ -886,6 +925,16 @@ height: 30rem
 
 
 @media(max-width:560px){
+    .btn-top{
+        width: 3rem;
+        height: 3rem;
+       
+    
+    }
+    .btn-top i{
+        font-size: 2.5rem;
+       
+    }
     .contact-right .field-area input{
       
         width: 100%;
@@ -1108,5 +1157,6 @@ height: 30rem
 .skill{
     padding: 1rem 0;
 }
+
 }
 

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
    
@@ -15,6 +15,9 @@
 
 </head>
 <body>
+    <div class="btn-top">
+        <i class="fas fa-angle-up"></i>
+    </div>
     
     <nav class="navbar">
         <div class="max-width">
@@ -22,15 +25,16 @@
                 <a href="" id="col">Portfo<span>lio.</span></a>
             </div>
           <ul class="menu">
-              <li><a href="#">home</a></li>
-              <li><a href="#about">about</a></li>
-              <li><a href="#service">service</a></li>
-              <li><a href="#skill">skills</a></li>
-              <li><a href="#team">teams</a></li>
-              <li><a href="#contact">contact</a></li>
+              <li><a href="#" class="li">home</a></li>
+              <li><a href="#about" class="li">about</a></li>
+              <li><a href="#service" class="li">service</a></li>
+              <li><a href="#skill" class="li">skills</a></li>
+              <li><a href="#team" class="li">teams</a></li>
+              <li><a href="#contact" class="li">contact</a></li>
           </ul>
           <div class="menu-bar">
             <i class="fas fa-bars" id="bar"></i>
+            <!-- <i class="fas fa-times"></i> -->
           </div>
            
         </div>
@@ -337,6 +341,10 @@
         }
     }
 });
+
+$('.btn-top').click(function(){
+    $('html').animate({scrollTop:0});
+})
 var typed = new Typed(".typing",{
     strings:["Blogger","Web Developer","Freelancer" ,"Designer",],
     typeSpeed:100,
@@ -346,29 +354,40 @@ var typed = new Typed(".typing",{
      </script>
      
     <script>
+        let btn_top = document.querySelector('.btn-top')
      let nav = document.querySelector('.navbar');
     let col = document.getElementById('col');
     let bar = document.getElementById('bar')
     console.log(bar)
     let menu_bar = document.querySelector(".menu-bar")
+    let time = document.querySelector(".fa-times")
     let menu = document.querySelector(".menu")
 
+
         window.addEventListener('scroll',()=>{
+            if(scrollY > 500){
+                btn_top.classList.add('show')
+            }
+            else{
+                btn_top.classList.remove('show')
+            }
             if(scrollY>60){
+                console.log(scrollY)
            nav.classList.add('sticky')
-      
+     
           
             }
             else{
+               
                 
                 nav.classList.remove('sticky')
            
             }
         });
-        menu_bar.addEventListener('click',()=>{
+       menu_bar.addEventListener('click',()=>{
             
-menu.classList.toggle('active')
-
+menu.classList.toggle('active') 
+bar.classList.toggle('active')
 
 });
 
